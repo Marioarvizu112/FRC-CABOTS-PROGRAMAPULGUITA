@@ -140,7 +140,7 @@ public class Robot extends TimedRobot {
        shoo.set(1);
        enm.set(1);
      }else if (Control.getRawButton(2)){
-       shoo.set(0.5);
+       shoo.set(0.6);
        enm.set(1);
      } else {
        shoo.set(0);
