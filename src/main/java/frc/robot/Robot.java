@@ -29,6 +29,7 @@ public class Robot extends TimedRobot {
   private final PWMTalonSRX intk =new PWMTalonSRX(8);//motor intake
   private final PWMVictorSPX shoo =new PWMVictorSPX(5);//motor shooter
   private final PWMVictorSPX enm =new PWMVictorSPX(2);//motor de enmedio>>
+  private final PWMSparkMax shoomax = new PWMSparkMax(9);
   private final Joystick Control = new Joystick(0);//control
 
   public static double rightTrigger;
@@ -135,20 +136,27 @@ public class Robot extends TimedRobot {
      }
  
  
- // shooter
+  // enmedio
  if(Control.getRawButton(1)){
-       shoo.set(1);
-       enm.set(1);
-     }else if (Control.getRawButton(2)){
-       shoo.set(0.6);
-       enm.set(1);
-     } else if (Control.getRawButton(3){
-       shoo.set(-0.6);
-       enm.set(-1);
+       enm1.set(1);
+       enm2.set(1);
+     } else if (Control.getRawButton(2)){
+       enm1.set(-0.6);
+       enm2.set(-1);
      } else {
-       shoo.set(0);
-       enm.set(0);
-         }
+       enm1.set(0);
+       enm2.set(0);
+     }
+ //shooter
+     if (Control.getRawAxis(3) != 0) {
+      shoomax.set(1);
+
+      
+  } else if(Control.getRawAxis(2) != 0){
+    shoomax.set(0.6);
+  }else {
+    shoomax.set(0);
+  }
   }
   
 
