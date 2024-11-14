@@ -29,7 +29,7 @@ public class Robot extends TimedRobot {
   private final PWMTalonSRX intk =new PWMTalonSRX(8);//motor intake
   private final PWMVictorSPX shoo =new PWMVictorSPX(5);//motor shooter
   private final PWMVictorSPX enm =new PWMVictorSPX(2);//motor de enmedio>>
-  private final PWMSparkMax shoomax = new PWMSparkMax(9);
+private final PWMTalonSRX shoomax =new PWMTalonSRX(9);
   private final Joystick Control = new Joystick(0);//control
 
   public static double rightTrigger;
