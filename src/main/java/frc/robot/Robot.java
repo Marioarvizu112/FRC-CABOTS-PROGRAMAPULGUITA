@@ -149,12 +149,10 @@ private final PWMTalonSRX shoomax =new PWMTalonSRX(9);
      }
  //shooter
      if (Control.getRawAxis(3) != 0) {
-      shoomax.set(1);
-
-      
-  } else if(Control.getRawAxis(2) != 0){
-    shoomax.set(0.6);
-  }else {
+      shoomax.set(0.8);
+  }else if (Control.getRawButton(4)) {
+    shoomax.set(-0.7);
+  } else{
     shoomax.set(0);
   }
   }
